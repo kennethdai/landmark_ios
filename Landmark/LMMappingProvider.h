@@ -15,7 +15,8 @@
 /**
  A reference to the RKManagedObjectStore for the Landmark application
  */
-@property (nonatomic, strong) RKManagedObjectStore *objectStore;
+// @property (nonatomic, strong) RKManagedObjectStore *objectStore;
++ (id)mappingProviderWithOutObject;
 
 + (id)mappingProviderWithObjectStore:(RKManagedObjectStore *)objectStore;
 

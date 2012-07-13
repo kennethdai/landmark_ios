@@ -13,7 +13,10 @@
 
 @implementation LMMappingProvider
 
-@synthesize objectStore;
+// @synthesize objectStore;
++ (id)mappingProviderWithOutObject {
+    return [[self alloc] init];
+}
 
 + (id)mappingProviderWithObjectStore:(RKManagedObjectStore *)objectStore {
     return [[self alloc] initWithObjectStore:objectStore];    
@@ -24,7 +27,7 @@
     self = [super init];
     
     if (self) {
-        self.objectStore = theObjectStore;
+        //self.objectStore = theObjectStore;
         
         [self setObjectMapping:[self userObjectMapping] 
         forResourcePathPattern:@"/api/v1/users" 
@@ -43,7 +46,7 @@
 }
 
 - (RKManagedObjectMapping *)userObjectMapping {
-    RKManagedObjectMapping *mapping =  [RKManagedObjectMapping mappingForEntityWithName:@"LMUser" inManagedObjectStore:self.objectStore];
+    RKManagedObjectMapping *mapping = [RKManagedObjectMapping mappingForClassWithName:@"LMUser"];
     mapping.primaryKeyAttribute = @"id";
     [mapping mapKeyPathsToAttributes:
      @"_id", @"userId",
@@ -55,7 +58,7 @@
 }
 
 - (RKManagedObjectMapping *)sharingObjectMapping {
-    RKManagedObjectMapping *mapping = [RKManagedObjectMapping mappingForEntityWithName:@"LMSharing" inManagedObjectStore:self.objectStore];
+    RKManagedObjectMapping *mapping = [RKManagedObjectMapping mappingForClassWithName:@"LMSharing"];
     
     mapping.primaryKeyAttribute = @"id";
     [mapping mapKeyPathsToAttributes:
