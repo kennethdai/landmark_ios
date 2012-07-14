@@ -39,6 +39,8 @@
 		386C597215454C1A000B592A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 386C597115454C1A000B592A /* main.m */; };
 		386C597615454C1A000B592A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 386C597515454C1A000B592A /* AppDelegate.m */; };
 		386C597915454C1A000B592A /* SplashViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 386C597815454C1A000B592A /* SplashViewController.m */; };
+		38719C7115B0432400B67446 /* LMUserMappingProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 38719C7015B0432400B67446 /* LMUserMappingProvider.m */; };
+		38719C7415B0435D00B67446 /* LMContactMappingProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 38719C7315B0435D00B67446 /* LMContactMappingProvider.m */; };
 		387C69FF154C3BE3005768B9 /* ContactsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 387C69FE154C3BE3005768B9 /* ContactsViewController.m */; };
 		387C6A02154C3BFE005768B9 /* ContactsView_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 387C6A01154C3BFE005768B9 /* ContactsView_iPhone.xib */; };
 		387C6A04154C3FC0005768B9 /* SplashView_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 387C6A03154C3FC0005768B9 /* SplashView_iPhone.xib */; };
@@ -159,6 +161,10 @@
 		386C597515454C1A000B592A /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		386C597715454C1A000B592A /* SplashViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SplashViewController.h; sourceTree = "<group>"; };
 		386C597815454C1A000B592A /* SplashViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SplashViewController.m; sourceTree = "<group>"; };
+		38719C6F15B0432400B67446 /* LMUserMappingProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMUserMappingProvider.h; sourceTree = "<group>"; };
+		38719C7015B0432400B67446 /* LMUserMappingProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMUserMappingProvider.m; sourceTree = "<group>"; };
+		38719C7215B0435D00B67446 /* LMContactMappingProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMContactMappingProvider.h; sourceTree = "<group>"; };
+		38719C7315B0435D00B67446 /* LMContactMappingProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMContactMappingProvider.m; sourceTree = "<group>"; };
 		387C69FD154C3BE3005768B9 /* ContactsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactsViewController.h; sourceTree = "<group>"; };
 		387C69FE154C3BE3005768B9 /* ContactsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactsViewController.m; sourceTree = "<group>"; };
 		387C6A01154C3BFE005768B9 /* ContactsView_iPhone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ContactsView_iPhone.xib; sourceTree = "<group>"; };
@@ -376,12 +382,11 @@
 			children = (
 				386C597415454C1A000B592A /* AppDelegate.h */,
 				386C597515454C1A000B592A /* AppDelegate.m */,
-				38D9BEAC15ABE10A00F1CEA7 /* LMMappingProvider.h */,
-				38D9BEAD15ABE10A00F1CEA7 /* LMMappingProvider.m */,
-				380F063F154566CC00C9CF7C /* ViewManager */,
 				3894D11A154901BC00707389 /* Protocals */,
 				386C598815455369000B592A /* Models */,
+				38719C6E15B042F200B67446 /* MappingProvider */,
 				386C598715455362000B592A /* Views */,
+				380F063F154566CC00C9CF7C /* ViewManager */,
 				386C598615455320000B592A /* ViewControllers */,
 				386C596C15454C1A000B592A /* Supporting Files */,
 			);
@@ -440,6 +445,19 @@
 				382FBC9615AF1D26003298B6 /* LMSetting.m */,
 			);
 			name = Models;
+			sourceTree = "<group>";
+		};
+		38719C6E15B042F200B67446 /* MappingProvider */ = {
+			isa = PBXGroup;
+			children = (
+				38D9BEAC15ABE10A00F1CEA7 /* LMMappingProvider.h */,
+				38D9BEAD15ABE10A00F1CEA7 /* LMMappingProvider.m */,
+				38719C6F15B0432400B67446 /* LMUserMappingProvider.h */,
+				38719C7015B0432400B67446 /* LMUserMappingProvider.m */,
+				38719C7215B0435D00B67446 /* LMContactMappingProvider.h */,
+				38719C7315B0435D00B67446 /* LMContactMappingProvider.m */,
+			);
+			name = MappingProvider;
 			sourceTree = "<group>";
 		};
 		387C69FC154C3B9C005768B9 /* Contracts */ = {
@@ -644,6 +662,8 @@
 				382FBC9415AF1CB6003298B6 /* LMContact.m in Sources */,
 				382FBC9715AF1D26003298B6 /* LMSetting.m in Sources */,
 				38D9BEC415AC0BF800F1CEA7 /* LMUserCell.m in Sources */,
+				38719C7115B0432400B67446 /* LMUserMappingProvider.m in Sources */,
+				38719C7415B0435D00B67446 /* LMContactMappingProvider.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

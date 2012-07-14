@@ -35,6 +35,7 @@
 //    self.objectStore = [RKManagedObjectStore objectStoreWithStoreFilename:@"Landmark.sqlite"];
 //    self.objectManager.objectStore = self.objectStore;
     self.objectManager.mappingProvider = [LMMappingProvider mappingProviderWithOutObject];
+//    self.objectManager.mappingProvider = [LMMappingProvider mappingProviderWithObjectStore:self.objectStore];
 }
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
